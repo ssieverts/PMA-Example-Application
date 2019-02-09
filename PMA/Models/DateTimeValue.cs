@@ -4,6 +4,11 @@ namespace PMA
 {
     public class DateTimeValue
     {
+        public DateTimeValue()
+        {
+
+        }
+
         public string DayStr { get; set; }
         public bool UrlParams { get; set; }
         public DateTime CalDate { get; set; }
