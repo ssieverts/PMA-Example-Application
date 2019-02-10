@@ -1,3 +1,1 @@
-# PMA-Example-Application
-
-Api Testing
+# PMA-Example-Applications
