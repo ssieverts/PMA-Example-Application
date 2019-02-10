@@ -3,8 +3,12 @@ using System.Globalization;
 
 namespace PMA
 {
+    /// <summary>
+    ///  Formated date display POCO
+    /// </summary>
     public class DateTimeValue
     {
+
         public DateTimeValue()
         {
 
@@ -14,9 +18,12 @@ namespace PMA
         public bool UrlParams { get; set; }
         public DateTime CalDate { get; set; }
 
+        /// <summary>
+        /// determines day offset to previous sunday from current date
+        /// </summary>
+        /// <returns></returns>
         public static int GetOffSet()
         {
-            // determine date offset to previous sunday from selected date
             DayOfWeek dow = DateTime.Parse(DateTime.Now.ToString(CultureInfo.CurrentCulture)).DayOfWeek;
             var down = (int)Enum.Parse(typeof(DayNumberOfWeek), dow.ToString());
             int offset = (0 - down);
@@ -25,11 +32,17 @@ namespace PMA
         }
     }
 
+    /// <summary>
+    /// new date POCO
+    /// </summary>
     public class NewDate
     {
         public DateTime CalDate { get; set; }
     }
 
+    /// <summary>
+    /// Day of week enum
+    /// </summary>
     public enum DayNumberOfWeek
     {
         Sunday = 0,

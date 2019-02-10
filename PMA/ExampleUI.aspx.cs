@@ -9,6 +9,9 @@ using RestSharp;
 
 namespace PMA
 {
+    /// <summary>
+    /// ExampleUI
+    /// </summary>
     public partial class ExampleUI : Page
     {
         protected string CalDate;
@@ -18,22 +21,35 @@ namespace PMA
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnExecuteApi1_Click(object sender, EventArgs e)
         {
+            //create client and request
             var client = new RestClient("http://localhost:9172/");
             var request = new RestRequest("api/DateTimeValue", Method.GET);
 
-            // return content type is sniffed but can be explicitly set via RestClient.AddHandler();
+            // return content type
             var response = client.Get<List<DateTimeValue>>(request);
 
+            //bind dates
             DropDownListApi1.DataSource = response.Data;
             DropDownListApi1.DataValueField = "CalDate";
             DropDownListApi1.DataTextField = "DayStr";
             DropDownListApi1.DataBind();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DropDownListApi1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get selected item and display in modal dialog
             var ddl = (DropDownList) sender;
             var li = ddl.SelectedItem;
             DayStr = li.Text;
@@ -41,6 +57,11 @@ namespace PMA
             divModal.Visible = true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnExecuteApi2_Click(object sender, EventArgs e)
         {
             // determine date offset to previous sunday from selected date
@@ -75,8 +96,14 @@ namespace PMA
             DropDownListApi2.DataBind();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DropDownListApi2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get selected item and display in modal dialog
             var ddl = (DropDownList) sender;
             var li = ddl.SelectedItem;
             DayStr = li.Text;
@@ -84,6 +111,11 @@ namespace PMA
             divModal.Visible = true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void CloseModal(object sender, EventArgs e)
         {
             divModal.Visible = false;

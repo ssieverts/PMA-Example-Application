@@ -20,6 +20,11 @@ namespace PMADesktop
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnExecute1_Click(object sender, EventArgs e)
         {
             var client = new RestClient("http://localhost:9172/");
@@ -34,6 +39,11 @@ namespace PMADesktop
             ddlApi1.Enabled = true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnExecute2_Click(object sender, EventArgs e)
         {
             // determine date offset to previous sunday from selected date
@@ -69,11 +79,21 @@ namespace PMADesktop
             ddlApi2.Enabled = true;
         }
 
+        /// <summary>
+        /// Application Close
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DdlApi1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var ddl = (ComboBox)sender;
@@ -85,6 +105,11 @@ namespace PMADesktop
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DdlApi2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var ddl = (ComboBox)sender;
