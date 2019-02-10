@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.Ajax.Utilities;
@@ -48,15 +49,15 @@ namespace PMA
             int offset = (0 - down);
 
             //****
-            // THERE IS A BUG IN THE request.AddJsonBody() FUNTION
-            // IT DOSEN'T TAKE INTO ACCOUNT THE CURRENT CULTURE AND TIME ZONE
-            // VALUE. ALL DATE MUST BE AGJUSTED MANUALLY BY -6:00 HOUR
+            // TODO: THERE IS A BUG IN THE request.AddJsonBody() FUNCTION
+            // IT DOESN'T TAKE INTO ACCOUNT THE CURRENT CULTURE AND TIME ZONE
+            // VALUE. ALL DATE MUST BE ADJUSTED MANUALLY BY -5:00 HOUR
             //****
             //generate new date values using offset
-            List<NewDate> newDates = new List<NewDate> {new NewDate { CalDate = DateTime.Parse(newDate.Value).AddDays(offset).AddHours(-6) }};
+            List<NewDate> newDates = new List<NewDate> { new NewDate { CalDate = DateTime.Parse(newDate.Value.ToString(CultureInfo.CurrentCulture)).AddDays(offset).AddHours(-5) } };
             for (int i=(offset+1); i<=(6+offset); i++)
             {
-                newDates.Add(new NewDate { CalDate = DateTime.Parse(newDate.Value).AddDays(i).AddHours(-6) });
+                newDates = new List<NewDate> { new NewDate { CalDate = DateTime.Parse(newDate.Value.ToString(CultureInfo.CurrentCulture)).AddDays(offset).AddHours(-5) } };
             }
 
             //create client and request

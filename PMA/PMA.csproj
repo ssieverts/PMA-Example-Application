@@ -229,8 +229,6 @@
     <Compile Include="ExampleUI.aspx.designer.cs">
       <DependentUpon>ExampleUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DateTimeValue.cs" />
-    <Compile Include="Controllers\DateTimeValueController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +282,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\css\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMAApi\PMAApi.csproj">
+      <Project>{1e53f40d-c4c5-4c3f-a06d-c8e7800525bf}</Project>
+      <Name>PMAApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

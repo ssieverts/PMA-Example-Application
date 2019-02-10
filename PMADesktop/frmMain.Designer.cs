@@ -37,7 +37,7 @@
             this.ddlApi2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.newDate = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             // ddlApi1
             // 
             this.ddlApi1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlApi1.Enabled = false;
             this.ddlApi1.FormattingEnabled = true;
             this.ddlApi1.Items.AddRange(new object[] {
             "Waiting for execution"});
@@ -95,6 +96,7 @@
             // ddlApi2
             // 
             this.ddlApi2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlApi2.Enabled = false;
             this.ddlApi2.FormattingEnabled = true;
             this.ddlApi2.Items.AddRange(new object[] {
             "Waiting for execution"});
@@ -122,12 +124,12 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Test POST Api";
             // 
-            // dateTimePicker1
+            // newDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(257, 64);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.newDate.Location = new System.Drawing.Point(257, 64);
+            this.newDate.Name = "newDate";
+            this.newDate.Size = new System.Drawing.Size(200, 20);
+            this.newDate.TabIndex = 8;
             // 
             // btnClose
             // 
@@ -147,7 +149,7 @@
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(490, 190);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.newDate);
             this.Controls.Add(this.btnExecute2);
             this.Controls.Add(this.ddlApi2);
             this.Controls.Add(this.label3);
@@ -178,7 +180,7 @@
         private System.Windows.Forms.ComboBox ddlApi2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker newDate;
         private System.Windows.Forms.Button btnClose;
     }
 }
