@@ -33,7 +33,7 @@
             <asp:Label ID="lblApi2" runat="server" Text="Test POST Api"></asp:Label><br/>
             
             <div class="col-sm-6">
-                <asp:Label ID="lblApi22" runat="server" Text="Select a day to generate date from previous Sunday."></asp:Label><br/>
+                <asp:Label ID="lblApi22" runat="server" Text="Select a day to generate dates from previous Sunday."></asp:Label><br/>
                 <div class="form-group">
                     <div class="input-group date" id="datetimepicker1">
                         <input type="text" ID="newDate" runat="server" class="form-control"/>

@@ -16,5 +16,33 @@ namespace PMADesktop
         {
             InitializeComponent();
         }
+
+        private void BtnExecute1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnExecute2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void DdlApi1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ddl = (ComboBox)sender;
+            MessageBox.Show(ddl.SelectedIndex.ToString());
+        }
+
+        private void DdlApi2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ddl = (ComboBox)sender;
+            MessageBox.Show(ddl.SelectedIndex.ToString());
+
+        }
     }
 }
